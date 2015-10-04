@@ -4,32 +4,39 @@
 goal = 10
 dealersPoints = 0
 myPoints = 0
-cards = {"Ace":14,"King":13, "Queen":12, "Jack":11, "10":10, "9":9, "8":8, "7":7, "6":6, "5":5, "4":4, "3":3, "2":2}
+cards = {14:"Ace",13:"King",12:"Queen",11:"Jack",10:"10", 9:"9", 8:"8", 7:"7",6:"6",5:"5",4:"4",3:"3",2:"2"}
+#switch the dictionary placement of the values above AS PER AHMAD meeting
 #Can have it ask name
 #Ready to play?
 #Need pseudo random generator here
-dealerscard = cards [randomkey]
-print "The dealer's card is: " cards[randomkey()]
-mycard=cards[randomkey]
-print "Your card is: ", cards[randomkey()]
-def compare (dealersCard,myCard)0
-	if dealerscard>mycard:
+def main_function():
+	dealersCard=random.randrange(2,15)
+	myCard=random.randrange(2,15)
+	dealersCard = cards [dealerRandom]
+	print "The dealer's card is: ", dealersCard
+	myCard=cards[userRandom]
+	print "Your card is: ", myCard
+	if dealersCard>myCard:
 			dealersPoints+=1
-	if dealerscard<mycard:
+	if dealersCard<myCard:
 			myPoints+=1
-	if dealerscard == mycard:
+	if dealersCard == myCard:
 		print "Go to War"
-			War():
-def Checkwinner():
-	CheckWinner (dealersPoints,myPoints):
-	# if war occurs
+#def Checkwinner():
+def CheckWinner (dealersPoints,myPoints):
+	if dealersPoints == 10:
+		print "Dealer wins, better luck next time!"
+	elif myPoints == 10:
+		print " You are the big winner!"
+# if war occurs
 def war():
-	for i=0;i<4;i+=1(dealer)
 	print "shuffling"
 	#countdown - 3 2 1 iteration
 	dealerBattlecard = random
 	userBattlecard = random
 		if myBattlecard>dealerBattlecard
+
+
 		print "You win this battle"
 	else:
 		print "Try again!"
