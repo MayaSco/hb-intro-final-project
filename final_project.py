@@ -1,27 +1,22 @@
 #War vs. Computer
-#Create a dictionary assigning values for cards in order
-#End of game is winner reaches 10 points or myCash ==0 or player types a key to exit
-#Can have it ask name, how much to bet?
-#Need pseudo random generator here
+#Player vs. Dealer high card in bets denomination of $5 beginning with $100.
+#If PlayersCard=DealersCard then go to war and additional betting may occur if player has enough money.
+#End of game is that 10 points has been reached or myCash<=0 or player types a key to exit
 import random
-goal = 10
 dealersPoints = 0
 myPoints = 0
 name = raw_input ("What is your name? ")
 print "Hello,",name, "let's play war!"
 myCash = 100 
-# keep tally of myCash and game is over if myCash<0
-myBet = int(raw_input ("You have $100 to start, minimum bet is $5. Place your bet in any increment of 5. "))
-# if myBet>myCash then print "Sorry, you don't have enough money, place another bet?
-# not sure what I was using this for
-# def ==(num1, num2):
-# 	if num1 == num2:
-# 		return True
-# 	else:
-# 		return False
+# running tally of myCash and exit game if myCash<=0 
+def myBet ():
+	myBet = int(raw_input ("You have $100 to start, minimum bet is $5. Place your bet in any increment of 5. "))
+		if myBet>myCash:
+			print "Sorry, you don't have enough money, place another bet?"	
+
 def isdivisibleby5(number):
 	return number %5==0
-def IsthereaWinner (dealersPoints,myPoints):
+def IsthereaWinner ():
 	return dealersPoints == 10 or myPoints ==10
 def dealerWin (dealersCard,myCard,dealersPoints,myPoints,myCash,myBet):
 	if dealersCard>myCard:
@@ -43,7 +38,7 @@ def gotoWar(dealersCard,myCard,dealersPoints,myPoints,myCash,myBet):
 # print "Dealer wins, better luck next time!"
 # print " You are the big winner!"
 cards = {14:"Ace",13:"King",12:"Queen",11:"Jack",10:"10", 9:"9", 8:"8", 7:"7",6:"6",5:"5",4:"4",3:"3",2:"2"}
-while (IsthereaWinner):
+def PlayRound():
 	dealerRandom=random.randrange(2,15)
 	userRandom=random.randrange(2,15)
 	dealersCard = cards [dealerRandom]
@@ -53,14 +48,12 @@ while (IsthereaWinner):
 	winningconditions
 	
 
-
-
 	if dealerRandom > userRandom:
 		dealerWin
 	elif userRandom > dealerRandom:
 		userWin
 	else:
-		GotoWar
+		GotoWar()
 #
 
 	dealerWin (dealerRandom,userRandom,dealersPoints,myPoints,myCash,myBet):
@@ -144,3 +137,4 @@ def winningconditions(dealersCard, mycard, dealrepoint, mypoint, myCash, myBet):
 else: (gotowar condition)
 
 '''
+S
